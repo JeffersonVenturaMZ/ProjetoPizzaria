@@ -1,0 +1,164 @@
+@import url(bootstrap.min.css);
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+body
+{
+    font-family: 'Poppins', sans-serif;;
+    background-color: var(--preto);
+}
+
+h1 
+{
+    color: white;
+}
+
+/* colors */
+:root{
+    --primary: #FAAD19;
+    --primary-light: #fac768;
+    --preto: #282C34;
+    --preto-light: #2e3035;
+    --light: #404042;
+}
+
+
+/* elements id */
+#banner
+{
+    color: #fff;
+    /* text-shadow: 3px 3px 3px var(--primary); */
+    position: relative;
+    background: url(/images/banner.jpg);
+    /* filter: grayscale(70%); */
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+#main {
+    transition: margin-left .5s;
+}
+
+#menu{
+    padding: 16px;
+}
+
+#menu a.destaque 
+{
+    display: block;
+    background: var(--light);
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    transition: all ease-out 0.2s;
+}
+
+#menu a.destaque:hover
+{
+    background: var(--primary-light);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
+}
+
+#menu p
+{
+    color: var(--dark);
+}
+
+#menu a.destaque .img-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+
+#pedidos 
+{
+    padding: 16px;
+}
+
+#pedidos a.pedido 
+{
+    display: block;
+    background: var(--light);
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    transition: all ease-out 0.2s;
+}
+
+#pedidos a.pedido:hover
+{
+    background: var(--preto-light);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
+}
+
+/* elements class */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav {
+    color: white;
+    font-size: 25px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--primary);
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: var(--primary-light);
+    background-color: var(--preto-light);
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+.button-primary 
+{
+    background-color: var(--primary);
+    border-color: var(--primary);
+    width: 100%;
+}
+    
+.button-primary:hover 
+{
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+

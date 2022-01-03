@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+  <title><%= title %></title>
+</head>
+<body style="color: white;">
+  <!-- SIDENAV -->
+  <div id="sidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <img src="/images/pizza.png" class="ms-3"> <span> Pizzadidos </span> <hr> 
+    <a href="/">Início</a>
+    <a href="/realizar_pedido">Fazer Pedido</a>
+    <a href="#">Cardápio</a>
+    <a href="#">Clientes</a>
+  </div>
+  <!-- FIM SIDENAV -->
+
+  <!-- MAIN (todo conteudo da pagina deve ficar aq dentro) -->
+  <div id="main">
+
+    <!-- BANNER -->
+    <div id="banner" class="border-bottom border-white">
+      <span class="p-3" style="font-size:30px;cursor:pointer;position: fixed;" onclick="openNav()">&#9776; Menu </span>
+    </div>
+    <!-- FIM BANNER -->
+    <!-- FORMULARIO -->
+    <div id="menu">
+      <div class="container">
+        <h1 class="text-center"><%= title %></h1>
+        <div class="d-flex justify-content-center">
+          <form action="<%= action %>" method="POST">
+            <p>Nome do Cliente: <input class="form-control" type="text" name="nome_cli" value="<%= doc.nome_cli %>" /></p>
+            <p>Bairro: <input class="form-control" type="text" name="bairro_cli" value="<%= doc.bairro_cli %>" /></p>
+            <p>Rua: <input class="form-control" type="text" name="rua_cli" value="<%= doc.rua_cli %>" /></p>
+            <p>Numero: <input class="form-control" type="text" name="numero_cli" value="<%= doc.numero_cli %>" /></p>
+            <p>Descrição: <input class="form-control" type="text" name="descricao_pedido" value="<%= doc.descricao_pedido %>" /></p>
+            <p>Valor: <input class="form-control" type="text" name="valor_pedido" value="<%= doc.valor_pedido %>" /></p>
+            <input class="btn btn-primary button button-primary" type="submit" value="Cadastrar Pedido" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <!-- FIM FORMULARIO -->
+  <!-- FIM MAIN -->
+  </div>
+
+  <script src="/javascripts/main.js"></script>
+</body>
+</html>

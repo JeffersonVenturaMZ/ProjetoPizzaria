@@ -1,0 +1,70 @@
+--- exemplo insert pizza
+
+db.cardapio.insert(
+    {
+        'produto': 'Pizza de Calabresa',
+        'preco': '32.00',
+        'ingredientes': 'Massa tradicional e calabresa',
+        'tipo': 'comida'
+    }
+)
+
+--- exemplo insert bebida
+
+db.cardapio.insert(
+    {
+        'produto': 'Coca Cola 2 litros',
+        'preco': 12.00,
+        'ml': 2000,
+        'marca': 'Coca Cola'
+        'tipo': 'bebida'
+    }
+)
+
+-- exemplo insert cliente
+
+db.cliente.insert(
+    {
+        'nome' : '',
+        'bairro' : '',
+        'rua' : '',
+        'numero': '',
+        'telefone': '',
+        'email' : ''
+    }
+)
+
+-- inserts cardapio
+
+varArray = [
+    {
+        'produto': 'Pizza de Calabresa',
+        'preco': '32.00',
+        'ingredientes': 'Massa tradicional e calabresa',
+        'tipo': 'comida'
+    },
+        
+    {
+        'produto': 'Pizza 4 Queijos',
+        'preco': '35.00',
+        'ingredientes': 'Queijo Mozzarella, Queijo Provolone, Queijo Parmesão, Queijo Cottage',
+        'tipo': 'comida'
+    },
+
+    {
+        'produto': 'Coca Cola 2 litros',
+        'preco': 12.00,
+        'ml': 2000,
+        'marca': 'Coca Cola'
+        'tipo': 'bebida'
+    },
+
+    {
+        'produto': 'Coca Cola 2 litros',
+        'preco': 12.00,
+        'ml': 2000,
+        'marca': 'Coca Cola'
+        'tipo': 'bebida'
+    }
+
+]

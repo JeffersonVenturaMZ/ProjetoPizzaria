@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pizzadidos</title>
+
+    <!-- CSS -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+  <!-- SIDENAV -->
+  <div id="sidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <img src="/images/pizza.png" class="ms-3"> <span> Pizzadidos </span> <hr>
+    <a href="/">Início <i class='bx bx-menu' ></i> </a>
+    <a href="/realizar_pedido">Fazer Pedido <i class='bx bx-notepad'></i>  </a>
+    <a href="#">Cardápio <i class='bx bxs-food-menu' ></i> </a>
+    <a href="#">Clientes <i class='bx bx-user' ></i> </a>
+  </div>
+  <!-- FIM SIDENAV -->
+
+  <!-- MAIN (todo conteudo da pagina deve ficar aq dentro) -->
+  <div id="main">
+
+    <!-- BANNER -->
+    <div id="banner" class="border-bottom border-white">
+      <span class="p-3" style="font-size:30px;cursor:pointer;position: fixed;" onclick="openNav()">&#9776; Menu </span>
+    </div>
+    <!-- FIM BANNER -->
+    <!-- MENU -->
+    <div id="menu">
+      
+      <div class="container block">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-3 col-md-6 mb-4 mb-lb-0">
+            <a href="/realizar_pedido" class="destaque" >
+              <div class="img-container mb-3">
+                <img src="/images/order.jpg" class="img-fluid" title="Clique para registrar um pedido.">
+              </div>
+              <h5 class="text-uppercase"> Fazer Pedido <i class='bx bx-notepad'></i> </h5>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lb-0">
+            <a href="#" class="destaque" >
+              <div class="img-container mb-3">
+                <img src="/images/menu.jpg" class="img-fluid" title="Clique para ver o cardápio.">
+              </div>
+              <h5 class="text-uppercase"> Cardápio <i class='bx bxs-pizza' ></i> </h5>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lb-0">
+            <a href="#" class="destaque" >
+              <div class="img-container mb-3">
+                <img src="/images/user.png" height="200px" class="img-fluid" title="Clique para ver o cardápio.">
+              </div>
+              <h5 class="text-uppercase"> Clientes <i class='bx bx-user' ></i> </h5>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <!-- FIM MENU -->
+    <!-- PEDIDOS -->
+    <div id="pedidos" style="color:white;">
+      <div class="container block">
+        <h1>Pedidos:</h1>
+        <div class="row d-flex justify-content-center">
+          
+          <% docs.forEach(function(customer){ %>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lb-0">
+            <a href="/edit/<%= customer._id %>" class="pedido">
+              <h5 class="text-uppercase"> <%= customer.nome_cli %> </h5>
+              <ul class="list-group text-start">
+                <li> Bairro: <%= customer.bairro_cli %> </li>
+                <li> Rua: <%= customer.rua_cli %> </li>
+                <li> Número: <%= customer.numero_cli %> </li>
+                <li> Pedido: <%= customer.descricao_pedido %> </li>
+                <li> Valor: <%= customer.valor_pedido %> </li>
+              </ul>
+              <a href="/delete/<%= customer._id %>" class="btn button-primary" onclick="return confirm('Você realmente deseja excluir o pedido?'); "> Concluir pedido </a>
+            </a>
+          </div>
+          <% }) %>
+
+        </div>
+      </div>
+    </div>
+    <!-- FIM PEDIDOS -->
+    
+  <!-- FIM MAIN -->
+  </div>
+
+  <script src="/javascripts/main.js"></script>
+</body>
+</html>
